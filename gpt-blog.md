@@ -50,7 +50,7 @@ The last comprehension test I wanted to mention had to do with relationships bet
 
 <br></br>
 <h2> Case Study </h2>
-As an experiment, I decided to test the BLEU score when translating a few phrases from Slovak, my native language, into English. Since Slovak isn't a particularly highly studied language in terms of machine translation, I thought it would be interesting to see if GPT-3 could accurately translate Slovak into English. In order to test this, I came up with a set of phrases in Slovak and their respective translations into English using Google Translate. From this set of translations, I took the Slovak phrases, fed them through the GPT-3 model completion task with a few-shot prompt, and did a BLEU score evaluation from the output of the GPT-3 model and the Google Translate reference text. One of the things I noticed is that the model sometimes generates different translated sentences for the same input. Nevertheless, the BLEU score still hovers around the same values. The prompt and results are shown below. The average BLEU score between GPT-3 and Google Translate for the ten translations was 0.7196. 
+As an experiment, I decided to test the BLEU score when translating a few phrases from Slovak, my native language, into English. Since Slovak isn't a particularly highly studied language in terms of machine translation, I thought it would be interesting to see if GPT-3 could accurately translate Slovak into English. In order to test this, I came up with a set of phrases in Slovak and their respective translations into English using Google Translate. From this set of translations, I took the Slovak phrases, fed them through the GPT-3 model completion task with a few-shot prompt, and did a BLEU score evaluation from the output of the GPT-3 model and the Google Translate reference text. One of the things I noticed is that the model sometimes generates different translated sentences for the same input. Nevertheless, the BLEU score still hovers around the same values. The prompt and results are shown below. The average BLEU score between GPT-3 and Google Translate for the ten translations was 0.7196. Case Study Code: https://github.com/alexrasla/GPT-3-Blog.
 <br></br>
 Prompt:
 <em>
@@ -84,9 +84,6 @@ Slovak:
 | Môžeme mať na večeru kuracie mäso? | Can we have chicken for dinner? | Can we have chicken for dinner? | 1.0 |
 | Tento víkend som išiel do domu svojich priateľov a hral videohry | This weekend I went to my friends' house and played video games | This weekend I went to my friends' house and played video games | 1.0 |
 | Veľmi sa teším, keď ich zajtra uvidím hrať na koncerte | I'm very happy to see them play at the concert tomorrow | I'm very looking forward to seeing them play at the concert tomorrow | 0.4833 |
-
-<br></br>
-Case Study Code: 
 
 
 <h2> Conclusion </h2>
