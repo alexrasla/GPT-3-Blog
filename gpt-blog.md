@@ -1,7 +1,9 @@
 <h1> GPT-3 </h1>
+<h2> Written By: Alex Rasla </h2>
+<hr/>
 
 <h2>Introduction</h2>	
-In the past couple years, we have seen the rise of Transformer architectures in Natural Language Processing. Transformers revolutionized the speed and accuracy of machine translation systems, and allevaiated the need for Recurrent Neural Networks and LSTMs to derive context and meaning for sequence to sequence modeling. Since the <em> Attention Is All You Need </em> paper was published in 2017, there have been many experimental application and fine-tuning improvements made upon the original model. The latest such improvement is the Generative Pre-Trained Transformer 3, or GPT-3.
+In the past couple years, we have seen the rise of Transformer architectures in Natural Language Processing. Transformers revolutionized the speed and accuracy of machine translation systems, and alleviated the need for Recurrent Neural Networks and LSTMs to derive context and meaning for sequence to sequence modeling. Since the <em> Attention Is All You Need </em> paper was published in 2017, there have been many experimental application and fine-tuning improvements made upon the original model. The latest such improvement is the Generative Pre-Trained Transformer 3, or GPT-3.
 <br></br>
 GPT-3 is the third generation of the autoregressive language modeling GPT-n series created by OpenAI. Its architecture is exactly the same as the previous generation, GPT-2, with the exception of using alternating dense and locally banded sparce attention patterns. For this generation, OpenAI trained 8 different models with a variable number of parameters, layers, dimensions, learning rates, and batch sizes. Furthermore, unlike the GPT-2 which was trained on the WebText dataset, GPT-3 was trained on Common Crawl, which consists of nearly a trillion words. However, because this dataset is so large and unfiltered, various techniques had to be used to prevent overfitting the model and data contaimination. 
 <br> </br>
@@ -39,7 +41,7 @@ Another simliar test using GPT-3 was news article generation. The model was give
 <h3> Comprehension </h3>
 One of the most extensive tasks GPT-3 was trained on was its ability to comprehend and extract meaning from text. This was tested in a varitey of ways including utilizing new words, answering questions based on prompts and facts, and general reasoning. 
 <br></br>
-To evaluate the model's ability to utilize new words, the OpenAI team came up with some made up words and provided its definition to the model. From this information, the model was tasked to use the word in a sentence. Since there is no quantitative metric to measure how well a made-up word is used in a sentence, they again used a qualitative human evaluation. In most cases, the GPT-3 generated sentences that included the made-up word seemed to be proficient at using the novel word correctly. A similar test with a quantitative metric had to do with recognizing novel patterns by using SAT analogies. The model was provided SAT style analogy questions and tasked to determine which pair of words in the answer choices had the same relationship as the words in the question. In this task, GPT-3 was correct 65.2% of the time in the few-shot setting. While this may not seem too accurate, take into account that the average college applicant was correct only 57% of the time. Harrowing.
+To evaluate the model's ability to utilize new words, the OpenAI team came up with some made up words and provided its definition to the model. From this information, the model was tasked to use the word in a sentence. Since there is no quantitative metric to measure how well a made-up word is used in a sentence, they again used a qualitative human evaluation. In most cases, the GPT-3 generated sentences that included the made-up word seemed to be proficient at using the novel word correctly. A similar test with a quantitative metric had to do with recognizing novel patterns by using SAT analogies. The model was provided SAT style analogy questions and tasked to determine which pair of words in the answer choices had the same relationship as the words in the question. In this task, GPT-3 was correct 65.2% of the time in the few-shot setting. While this may not seem too accurate, take into account that the average college applicant was correct only 57% of the time.
 <br></br>
 Another comprehension task GPT-3 was tested on was knowledge-based question answering. The model was given the PhysicalQA dataset which contains a set of common sense questions about how the world works. In this experiment, GPT-3 achieved an accuracy of 82.8% in the few-shot setting on the easy questions. Compared to a previous fine-tuned state-of-the-art model RoBERTa, GPT-3's accuracy was 3.4% higher, again showcasing its ability to outperform fine-tuned models. 
 <br></br>
@@ -49,7 +51,7 @@ The last comprehension test I wanted to mention had to do with relationships bet
 <h2> Case Study </h2>
 As an experiment, I decided to test the BLEU score when translating a few phrases from Slovak, my native language, into English. Since Slovak isn't a particularly highly studied language in terms of machine translation, I thought it would be interesting to see if GPT-3 could accurately translate Slovak into English. In order to test this, I came up with a set of phrases in Slovak and their respective translations into English using Google Translate. From this set of translations, I took the Slovak phrases, fed them through the GPT-3 model completion task with a few-shot prompt, and did a BLEU score evaluation from the output of the GPT-3 model and the Google Translate reference text. One of the things I noticed throughout this experiment was that the model sometimes generates different translated sentences for the same input. Nevertheless, the BLEU score still hovers around the same values. The prompt and results are shown below. The average BLEU score between GPT-3's translation and Google Translate for the ten translations was 0.7196. 
 
-Case Study Code: https://github.com/alexrasla/GPT-3-Blog
+[Case Study Code](https://github.com/alexrasla/GPT-3-Blog)
 <br></br>
 Prompt:
 <em>
@@ -91,3 +93,10 @@ From this blog, we see that GPT-3 is extremely powerful and can perform better o
 For language translation specifically, it achieved BLEU scores slightly below that of some supervised NMT models. This is incredible, given it is not fine-tuned or trained for machine tranlation. When increasing from zero-shot to one-shot to few-shot, GPT-3 performed significantly better and better in translating between languages. It performed best when translating to English because the CommonCrawl dataset used to train GPT-3 contained English words 93% of the time, and foreign words 7% of the time. In my specific case study of translating Slovak into English, the model achieved an average BLEU score of 0.7196 using a few-shot setting. 
 <br></br>
 In my opinion, even though GPT-3 is the latest and greatest language model to date, there is still room for improvement for these novel large-scale models. While GPT-3 proved that one pre-trained model can perform many NLP tasks and generate impressive results, it still lacks the ability to extract meaning and comprehension from text. Its synthesis techniques are gramatically sound and readable, but its contextual meaning is often repetitive, incoherent, and occasionaly contradictory. There are hypotheses that bidirectional encoder models could solve these sort of comprehension issues and create another incredible model, but until we figure out a way to truly extract meaning and generate long text that gives us coherent information, I believe GPT-3 will remain the status qou for generative language models.
+
+<br></br>
+<h2> References </h2>
+
+[1][<em> Language Models are Few-Shot Learners </em>](https://arxiv.org/abs/2005.14165)
+
+[2][<em> Attention Is All You Need </em>](https://arxiv.org/abs/1706.03762)
